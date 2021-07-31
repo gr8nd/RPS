@@ -53,12 +53,13 @@ class RPS:
             self.computer_count += 1
 
     def count_wins(self):
-        print("Computer won", self.computer_count, " and human won " + self.human_count)
+        s = "Computer won {0} times and human won {1} times".format(self.computer_count, self.human_count)
+        print(s)
 
 
 def game_play():
     game = RPS()
-    for i in range(10):
+    for i in range(5):
         human_choice = int(input("Enter your choice 1 for rock, 2 for paper and 3 for scissors: "))
         game.human_play(human_choice)
         print("Human has played", human_choice)
