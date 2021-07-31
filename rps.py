@@ -21,6 +21,8 @@ from random import choice
 class RPS:
     def __init__(self):
         self.choices = [1, 2, 3]
+        self.computer_count = 0
+        self.human_count = 0
 
     def computer_play(self, cc):
         self.cc = cc
@@ -33,16 +35,25 @@ class RPS:
             print("It is a tie")
         elif self.cc == 1 and self.hc == 2:
             print("Human wins because paper can cover a rock")
+            self.human_count += 1
         elif self.cc == 2 and self.hc == 1:
             print("Computer wins because paper can cover a rock")
+            self.computer_count += 1
         elif self.cc == 1 and self.hc == 3:
             print("Computer wins because rock can break scissors")
+            self.computer_count += 1
         elif self.cc == 3 and self.hc == 1:
             print("Human wins because rock can break scissors")
+            self.human_count += 1
         elif self.cc == 2 and self.hc == 3:
             print("Human wins because scissors can cut paper")
+            self.human_count += 1
         elif self.cc == 3 and self.hc == 2:
             print("Computer wins because scissors can cut paper")
+            self.computer_count += 1
+
+    def count_wins(self):
+        print("Computer won", self.computer_count, " and human won " + self.human_count)
 
 
 def game_play():
@@ -57,3 +68,4 @@ def game_play():
         print("Computer has played", computer_choice)
 
         game.check_winner()
+    game.count_wins()
