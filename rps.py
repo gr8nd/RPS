@@ -61,9 +61,9 @@ def game_play():
     game = RPS()
     for i in range(5):
         human_choice = int(input("Enter your choice 1 for rock, 2 for paper and 3 for scissors: "))
-        game.human_play(human_choice)
-        print("Human has played", human_choice)
-
+        if human_choice == 1 or human_choice == 2 or human_choice == 3:
+            game.human_play(human_choice)
+            print("Human has played", human_choice)
         computer_choice = choice([1, 2, 3])
         game.computer_play(computer_choice)
         print("Computer has played", computer_choice)
